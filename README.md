@@ -2,6 +2,8 @@
 
 A state-of-the-art, glassmorphic weather application built using React, Vite, and the OpenWeatherMap API. Designed with refined aesthetics, smooth animations, and advanced developer practices that make it a standout portfolio project.
 
+**🌐 Live Demo**: [https://weather-app-nine-black-40.vercel.app](https://weather-app-nine-black-40.vercel.app)
+
 ## 🌟 Key Features
 
 - **Dynamic Weather Themes**: The background interface smoothly shifts between premium HSL gradients matching the current weather conditions (Sunny/Clear, Clouds, Rain, Snow, Thunderstorm, Mist) and automatically shifts for Day/Night cycles.
