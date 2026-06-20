@@ -1,0 +1,119 @@
+:root {
+  --font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  /* Modern Neutral Colors */
+  --bg-dark: #0f111a;
+  --text-primary-light: #ffffff;
+  --text-secondary-light: rgba(255, 255, 255, 0.7);
+  --text-muted-light: rgba(255, 255, 255, 0.45);
+  
+  --border-light: rgba(255, 255, 255, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-bg-hover: rgba(255, 255, 255, 0.14);
+  --glass-shadow: rgba(0, 0, 0, 0.2) 0 8px 32px 0;
+  
+  /* Weather Theme Gradients (Premium Dual-tone HSL Gradients) */
+  --theme-default-grad: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --theme-clear-day: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  --theme-clear-night: linear-gradient(135deg, #09090e 0%, #181935 100%);
+  --theme-clouds-day: linear-gradient(135deg, #3a6073 0%, #3a7bd5 100%);
+  --theme-clouds-night: linear-gradient(135deg, #1e2022 0%, #3a3e40 100%);
+  --theme-rain: linear-gradient(135deg, #2b3a42 0%, #3f51b5 100%);
+  --theme-snow: linear-gradient(135deg, #304352 0%, #d7d2cc 100%);
+  --theme-thunderstorm: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+  --theme-mist: linear-gradient(135deg, #515f72 0%, #bac8e0 100%);
+
+  /* Animation Timings */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-primary-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 12px 40px 0;
+}
+
+/* Custom Scrollbar for Forecasts */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  transition: var(--transition-smooth);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Utility to ensure standard root flex layout */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
